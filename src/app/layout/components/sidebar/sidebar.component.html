@@ -1,2 +1,10 @@
 <div id="sidebar">
+  <mat-nav-list>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/cadastrar']">
+      <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Cadastrar' | translate }}
+    </a>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/visualizar']">
+      <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Visualizar' | translate }}
+    </a>
+  </mat-nav-list>
 </div>
