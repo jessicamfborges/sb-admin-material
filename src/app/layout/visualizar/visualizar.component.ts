@@ -9,7 +9,7 @@ export class VisualizarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

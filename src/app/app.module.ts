@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,9 @@ export const createTranslateLoader = (http: HttpClient) => {
     imports: [
         BrowserModule,
         AppRoutingModule,
+            AgmCoreModule.forRoot({
+              apiKey: 'AIzaSyB42_Zd1se2Zm_Z1KN2rTziuJId_Yno8_A'
+            }),
         BrowserAnimationsModule,
         LayoutModule,
         OverlayModule,

@@ -18,6 +18,7 @@ import { NavComponent } from './nav/nav.component';
 import { Screen2Component } from './screen2/screen2.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { VisualizarComponent } from './visualizar/visualizar.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { VisualizarComponent } from './visualizar/visualizar.component';
         MatInputModule,
         MatMenuModule,
         MatListModule,
-        TranslateModule
+        TranslateModule,
+        AgmCoreModule
     ],
     declarations: [
       VisualizarComponent,
