@@ -17,6 +17,7 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatSelectModule } from '@angular/material';
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -36,6 +37,7 @@ export const createTranslateLoader = (http: HttpClient) => {
             AgmCoreModule.forRoot({
               apiKey: 'AIzaSyB42_Zd1se2Zm_Z1KN2rTziuJId_Yno8_A'
             }),
+        MatSelectModule,
         BrowserAnimationsModule,
         LayoutModule,
         OverlayModule,

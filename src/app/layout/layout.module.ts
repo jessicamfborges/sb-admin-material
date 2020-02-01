@@ -19,30 +19,34 @@ import { Screen2Component } from './screen2/screen2.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { VisualizarComponent } from './visualizar/visualizar.component';
 import { AgmCoreModule } from '@agm/core';
+import { MatSelectModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-        CommonModule,
-        LayoutRoutingModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatListModule,
-        TranslateModule,
-        AgmCoreModule
-    ],
-    declarations: [
-      VisualizarComponent,
-      CadastrarComponent,
-      Screen2Component,
-      LayoutComponent,
-      NavComponent,
-      TopnavComponent,
-      SidebarComponent,
-    ]
+    ReactiveFormsModule,
+    MatSelectModule,
+    CommonModule,
+    LayoutRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatListModule,
+    TranslateModule,
+    AgmCoreModule
+  ],
+  declarations: [
+    VisualizarComponent,
+    CadastrarComponent,
+    Screen2Component,
+    LayoutComponent,
+    NavComponent,
+    TopnavComponent,
+    SidebarComponent,
+  ]
 
 })
 export class LayoutModule { }
