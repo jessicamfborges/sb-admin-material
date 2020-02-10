@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-visualizar',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./visualizar.component.scss']
 })
 export class VisualizarComponent implements OnInit {
+
+  @ViewChild('agmMarker') agmMarker
 
   lat = -22.9311594;
   long = -43.3584189;
@@ -16,13 +19,13 @@ export class VisualizarComponent implements OnInit {
   minhasLocalizacoes = [
     {
       nome: 'Lemobs',
-      lat: -22.8657187,
+      lat: -22.8657199,
       long: -43.2211524
     },
     {
       nome: 'CCBB',
-      lat: -22.9010769,
-      long: -43.1787826
+      lat: -22.9986127,
+      long: -43.3470666
     },
     {
       nome: 'INFNET',
@@ -39,4 +42,8 @@ export class VisualizarComponent implements OnInit {
 
   }
 
+  
+
 }
+
+
