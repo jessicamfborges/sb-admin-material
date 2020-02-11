@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { visualizarservice } from '../visualizar/visualizar.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CadastrarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceDados: visualizarservice) { }
 
   cadastroVisualizacaoGroup: FormGroup;
 
@@ -16,13 +17,19 @@ export class CadastrarComponent implements OnInit {
 
   localizacoes: Map<string, string>;
 
-
+  
   
  Localizacoes = [ ]
   
 
   ngOnInit() {
     // buscar lista do localstorage
+    this.serviceDados.setTopnav({
+      nome: 'Lemobs',
+      tipo: 'Casa',
+      lat: -22.8657199,
+      long: -43.2211524
+    });
 
     this.Localizacoes = [
       {
@@ -32,6 +39,7 @@ export class CadastrarComponent implements OnInit {
         long: -43.2211524
       },
       {
+      
         nome: 'CCBB',
         tipo: 'Lazer',
         lat: -22.9986127,
@@ -84,10 +92,22 @@ export class CadastrarComponent implements OnInit {
         this.localizacoes.set(control, this.cadastroVisualizacaoGroup.controls[control].value);
 
       }.bind(this));
+
+      this.serviceDados.setTopnav({
+        nome: this.cadastroVisualizacaoGroup.get('nome').value,
+        tipo: this.cadastroVisualizacaoGroup.get('tipo').value,
+        lat: this.cadastroVisualizacaoGroup.get('lat').value,
+        long: this.cadastroVisualizacaoGroup.get('long').value
+      });
+      
       console.log(this.localizacoes)
-      localStorage.setItem('localizacoes', JSON.stringify(this.localizacoes));
+      window.localStorage.setItem('localizacoes', JSON.stringify(this.localizacoes));
       console.log(localStorage.getItem('localizacoes'));
     }
+  }
+
+  teste() {
+    console.log(this.serviceDados.getTopnav())
   }
 
 }

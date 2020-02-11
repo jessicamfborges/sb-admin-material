@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import { visualizarservice } from './visualizar.service';
+import { AgmMarker } from '@agm/core';
 
 
 @Component({
@@ -8,13 +10,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class VisualizarComponent implements OnInit {
 
-  @ViewChild('agmMarker') agmMarker
+  constructor(private serviceDados: visualizarservice) { }
+
+  @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
 
   lat = -22.9311594;
   long = -43.3584189;
 
-  localizacoesMap: Map<string, string>;
+  localizacoesMap: any=[];
   data: string;
+
 
   minhasLocalizacoes = [
     {
@@ -34,15 +39,17 @@ export class VisualizarComponent implements OnInit {
     }
   ]
 
-  constructor() { }
-
   ngOnInit(): void {
-
+    
     this.localizacoesMap = new Map();
 
   }
 
-  
+  teste(){
+    console.log(this.serviceDados.getTopnav())
+    console.log(this.agmMarker)
+    this.minhasLocalizacoes = this.serviceDados.getTopnav();
+  }
 
 }
 
