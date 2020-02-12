@@ -55,8 +55,8 @@ export class CadastrarComponent implements OnInit {
       {
         nome: 'INFNET',
         tipo: 'Escritório',
-        lat: -22.9060548,
-        long: -43.1790855
+        lat: -22925086,
+        long: -43361106
       }
     ]
 
@@ -99,8 +99,7 @@ export class CadastrarComponent implements OnInit {
         this.localizacoes.set(control, this.cadastroVisualizacaoGroup.controls[control].value);
 
       }.bind(this));
-
-      this.serviceDados.setTopnav({
+        this.serviceDados.setTopnav({
         nome: this.cadastroVisualizacaoGroup.get('nome').value,
         tipo: this.cadastroVisualizacaoGroup.get('tipo').value,
         lat: this.cadastroVisualizacaoGroup.get('lat').value,

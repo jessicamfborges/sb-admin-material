@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import { visualizarservice } from './visualizar.service';
 import { AgmMarker } from '@agm/core';
+import { InfoWindow } from '@agm/core/services/google-maps-types'
 
 
 @Component({
@@ -11,8 +12,10 @@ import { AgmMarker } from '@agm/core';
 export class VisualizarComponent implements OnInit {
 
   constructor(private serviceDados: visualizarservice) { }
-
+  public infoWindow: InfoWindow = undefined
+  
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
+  @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;
 
   lat = -22.9311594;
   long = -43.3584189;
@@ -21,7 +24,15 @@ export class VisualizarComponent implements OnInit {
   data: string;
   minhasLocalizacoes: any = [];
 
+  markers: any[] = [];
 
+  selectedLat: Number = 0;
+  selectedLng: Number = 0;
+  
+  clickedMarker(lat: number, lng: number) {
+  this.selectedLat = lat;
+  this.selectedLng = lng;
+  }
   // minhasLocalizacoes = [
   //   {
   //     nome: 'Lemobs',
@@ -40,6 +51,7 @@ export class VisualizarComponent implements OnInit {
   //   }
   // ]
 
+  
   ngOnInit(): void {
     
     this.localizacoesMap = new Map();
@@ -49,9 +61,13 @@ export class VisualizarComponent implements OnInit {
   teste(){
     console.log(this.serviceDados.getTopnav())
     console.log(this.agmMarker)
-    this.minhasLocalizacoes = this.serviceDados.getTopnav();
+    
   }
 
+  click(marker){
+    console.log(marker)
+  }
+  
 }
 
 

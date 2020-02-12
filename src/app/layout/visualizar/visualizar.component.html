@@ -1,14 +1,19 @@
 
-
-<agm-map [latitude]="lat" [longitude]="long" [zoom]="11">
+<agm-map #mapa [latitude]="lat" [longitude]="long" [zoom]="11" >
+ 
   <agm-marker
+
     #agmMarker
     *ngFor="let localizacao of this.serviceDados.getTopnav()"
     [latitude]="localizacao.lat"
     [longitude]="localizacao.long"
     [opacity]="1"
-    [markerDraggable]="true"
+    [markerDraggable]="false"
+    (markerClick)="click(localizacao)"
+    [iconUrl]= "'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Board-Azure-icon.png'"
   >
   </agm-marker>
+
+
 </agm-map>
 <button mat-raised-button (click)="teste()">Teste</button>
