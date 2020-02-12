@@ -3,7 +3,7 @@
 <agm-map [latitude]="lat" [longitude]="long" [zoom]="11">
   <agm-marker
     #agmMarker
-    *ngFor="let localizacao of minhasLocalizacoes"
+    *ngFor="let localizacao of this.serviceDados.getTopnav()"
     [latitude]="localizacao.lat"
     [longitude]="localizacao.long"
     [opacity]="1"

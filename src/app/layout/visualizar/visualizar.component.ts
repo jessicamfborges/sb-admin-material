@@ -19,25 +19,26 @@ export class VisualizarComponent implements OnInit {
 
   localizacoesMap: any=[];
   data: string;
+  minhasLocalizacoes: any = [];
 
 
-  minhasLocalizacoes = [
-    {
-      nome: 'Lemobs',
-      lat: -22.8657199,
-      long: -43.2211524
-    },
-    {
-      nome: 'CCBB',
-      lat: -22.9986127,
-      long: -43.3470666
-    },
-    {
-      nome: 'INFNET',
-      lat: -22.9060548,
-      long: -43.1790855
-    }
-  ]
+  // minhasLocalizacoes = [
+  //   {
+  //     nome: 'Lemobs',
+  //     lat: -22.8782083,
+  //     long: -43.2717735
+  //   },
+  //   {
+  //     nome: 'CCBB',
+  //     lat: -22.9986777,
+  //     long: -43.3470777
+  //   },
+  //   {
+  //     nome: 'INFNET',
+  //     lat: -22925086,
+  //     long: -43361106
+  //   }
+  // ]
 
   ngOnInit(): void {
     

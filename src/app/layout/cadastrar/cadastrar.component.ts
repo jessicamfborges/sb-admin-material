@@ -27,8 +27,15 @@ export class CadastrarComponent implements OnInit {
     this.serviceDados.setTopnav({
       nome: 'Lemobs',
       tipo: 'Casa',
-      lat: -22.8657199,
-      long: -43.2211524
+      lat: -22.8782083,
+      long: -43.2717735
+    })
+
+    this.serviceDados.setTopnav({
+      nome: 'CCBB',
+      tipo: 'Lazer',
+      lat: -22.9986777,
+      long: -43.3470777
     });
 
     this.Localizacoes = [
@@ -42,8 +49,8 @@ export class CadastrarComponent implements OnInit {
       
         nome: 'CCBB',
         tipo: 'Lazer',
-        lat: -22.9986127,
-        long: -43.3470666
+        lat: -22.9986777,
+        long: -43.3470777
       },
       {
         nome: 'INFNET',
@@ -56,8 +63,8 @@ export class CadastrarComponent implements OnInit {
     this.Localizacoes.push({
       nome: 'CCBB',
       tipo: 'Lazer',
-      lat: -22.9986127,
-      long: -43.3470666
+      lat: -22.9986777,
+      long: -43.3470777
     })
     this.Localizacoes.push({
       nome: 'INFNET',
@@ -68,8 +75,8 @@ export class CadastrarComponent implements OnInit {
     this.Localizacoes.push({
       nome: 'Lemobs',
         tipo: 'Casa',
-        lat: -22.8657199,
-        long: -43.2211524
+        lat: -22.8782083,
+        long: -43.2717735
     })
 
      
