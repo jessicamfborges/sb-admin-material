@@ -1,4 +1,4 @@
-
+<!-- criar um icon para cada imagem -->
 <agm-map #mapa [latitude]="lat" [longitude]="long" [zoom]="11" >
  
   <agm-marker
@@ -10,10 +10,8 @@
     [opacity]="1"
     [markerDraggable]="false"
     (markerClick)="click(localizacao)"
-    [iconUrl]= "'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Board-Azure-icon.png'"
-  >
+    [iconUrl]= "'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Board-Azure-icon.png'" 
+  > 
   </agm-marker>
-
-
 </agm-map>
 <button mat-raised-button (click)="teste()">Teste</button>

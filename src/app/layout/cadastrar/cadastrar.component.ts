@@ -100,7 +100,7 @@ export class CadastrarComponent implements OnInit {
 
       }.bind(this));
         this.serviceDados.setTopnav({
-        nome: this.cadastroVisualizacaoGroup.get('nome').value,
+        nome: this.cadastroVisualizacaoGroup.get('nome').value,//inserir um if para cada um dos tipos relacionados ao iconUrl
         tipo: this.cadastroVisualizacaoGroup.get('tipo').value,
         lat: this.cadastroVisualizacaoGroup.get('lat').value,
         long: this.cadastroVisualizacaoGroup.get('long').value

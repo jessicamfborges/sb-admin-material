@@ -33,25 +33,8 @@ export class VisualizarComponent implements OnInit {
   this.selectedLat = lat;
   this.selectedLng = lng;
   }
-  // minhasLocalizacoes = [
-  //   {
-  //     nome: 'Lemobs',
-  //     lat: -22.8782083,
-  //     long: -43.2717735
-  //   },
-  //   {
-  //     nome: 'CCBB',
-  //     lat: -22.9986777,
-  //     long: -43.3470777
-  //   },
-  //   {
-  //     nome: 'INFNET',
-  //     lat: -22925086,
-  //     long: -43361106
-  //   }
-  // ]
-
   
+
   ngOnInit(): void {
     
     this.localizacoesMap = new Map();
