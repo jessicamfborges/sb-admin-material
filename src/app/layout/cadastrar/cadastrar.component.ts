@@ -99,13 +99,27 @@ export class CadastrarComponent implements OnInit {
         this.localizacoes.set(control, this.cadastroVisualizacaoGroup.controls[control].value);
 
       }.bind(this));
+      var icone 
+       if (this.cadastroVisualizacaoGroup.get('tipo').value === "Casa"){
+         icone = "/home/jessicaborges/Desktop/desafio/src/assets/icons"
+        //  "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Board-Azure-icon.png"
+       } else
+       if (this.cadastroVisualizacaoGroup.get('tipo').value === "Escritório"){
+         icone = "http://icons.iconarchive.com/icons/iconshock/super-vista-general/32/home-icon.png"
+         }else
+       if (this.cadastroVisualizacaoGroup.get('tipo').value === "Lazer"){
+         icone = "http://icons.iconarchive.com/icons/google/noto-emoji-food-drink/32/32446-fork-and-knife-with-plate-icon.png"
+         
+       }
         this.serviceDados.setTopnav({
-        nome: this.cadastroVisualizacaoGroup.get('nome').value,//inserir um if para cada um dos tipos relacionados ao iconUrl
+        nome: this.cadastroVisualizacaoGroup.get('nome').value,
         tipo: this.cadastroVisualizacaoGroup.get('tipo').value,
+         icone : icone,
         lat: this.cadastroVisualizacaoGroup.get('lat').value,
         long: this.cadastroVisualizacaoGroup.get('long').value
       });
       
+    
       console.log(this.localizacoes)
       window.localStorage.setItem('localizacoes', JSON.stringify(this.localizacoes));
       console.log(localStorage.getItem('localizacoes'));

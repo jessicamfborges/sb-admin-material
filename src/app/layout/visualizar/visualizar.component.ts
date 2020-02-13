@@ -16,6 +16,7 @@ export class VisualizarComponent implements OnInit {
   
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
   @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;
+ 
 
   lat = -22.9311594;
   long = -43.3584189;
