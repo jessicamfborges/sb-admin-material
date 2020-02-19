@@ -2,7 +2,9 @@ import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import { visualizarservice } from './visualizar.service';
 import { AgmMarker } from '@agm/core';
 import { InfoWindow } from '@agm/core/services/google-maps-types'
-
+import {Bairros} from 'src/app/layout/visualizar/bairros';
+import {coordenadas} from 'src/app/layout/visualizar/coordenadas';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-visualizar',
@@ -17,6 +19,9 @@ export class VisualizarComponent implements OnInit {
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
   @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;
  
+
+  polygonos = Bairros.bairros
+  polyline = coordenadas.coordenadas 
 
   lat = -22.9311594;
   long = -43.3584189;
@@ -37,9 +42,8 @@ export class VisualizarComponent implements OnInit {
   
 
   ngOnInit(): void {
-    
-    this.localizacoesMap = new Map();
-
+    // console.log(this.polyline);
+    this.localizacoesMap = new Map();  
   }
 
   teste(){

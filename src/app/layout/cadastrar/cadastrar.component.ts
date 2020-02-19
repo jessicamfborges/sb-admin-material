@@ -105,10 +105,10 @@ export class CadastrarComponent implements OnInit {
         //  "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Board-Azure-icon.png"
        } else
        if (this.cadastroVisualizacaoGroup.get('tipo').value === "Escritório"){
-         icone = "http://icons.iconarchive.com/icons/iconshock/super-vista-general/32/home-icon.png"
+         icone = "http://icons.iconarchive.com/icons/awicons/vista-artistic/32/office-building-icon.png"
          }else
        if (this.cadastroVisualizacaoGroup.get('tipo').value === "Lazer"){
-         icone = "http://icons.iconarchive.com/icons/google/noto-emoji-food-drink/32/32446-fork-and-knife-with-plate-icon.png"
+         icone = "http://icons.iconarchive.com/icons/artdesigner/urban-stories/32/Bench-icon.png"
          
        }
         this.serviceDados.setTopnav({

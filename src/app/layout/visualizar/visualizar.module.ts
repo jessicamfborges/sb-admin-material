@@ -3,6 +3,7 @@ import { CommonModule} from '@angular/common';
 import { VisualizarComponent } from './visualizar.component';
 import { cadastrarmodel } from '../cadastrar/cadastrar.module';
 import { visualizarservice } from './visualizar.service';
+import {Component} from '@angular/core';
 
 @NgModule({
     declarations: [VisualizarComponent],

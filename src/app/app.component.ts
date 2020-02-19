@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Subscriber } from 'rxjs';
-import {Bairros} from 'src/assets/json/bairros';
+
 
 
 @Component({
@@ -20,12 +20,12 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(Bairros.bairros)
-        this.http.get<any>(this.urlToJson).subscribe(Response =>  
-            {
-                this.result = Response;
+        // console.log(Bairros.bairros)
+        // this.http.get<any>(this.urlToJson).subscribe(Response =>  
+        //     {
+        //         this.result = Response;
 
-            });
+        //     });
     }
     title = 'angular-json-file';
 }
