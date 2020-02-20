@@ -15,6 +15,28 @@ export class VisualizarComponent implements OnInit {
 
   constructor(private serviceDados: visualizarservice) { }
   public infoWindow: InfoWindow = undefined
+
+
+
+// infoWindowOpened = null
+// previous_info_window = null
+
+// close_window(){
+// if (this.previous_info_window != null ) {
+//   this.previous_info_window.close()
+//   }    
+// }
+
+// select_marker(data,infoWindow){
+//  if (this.previous_info_window == null)
+//   this.previous_info_window = infoWindow;
+//  else{
+//   this.infoWindowOpened = infoWindow
+//   this.previous_info_window.close()
+//  }
+//  this.previous_info_window = infoWindow
+// }
+//info
   
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
   @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;

@@ -22,6 +22,18 @@
   </agm-polyline>
  
   <agm-polygon [strokeColor]="'#083478'" [strokeWeight]="2" [paths]="this.polygonos"></agm-polygon>  
+
+  <!-- <agm-info-window #info [disableAutoPan]="true">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{locationItem.Name}}</h5>
+           <h6 class="card-subtitle mb-1">Capacity:{{locationItem.Capacity}}</h6>
+            <a (click)="findHotels(locationItem)" class="card-link">
+Click to find nearby hotels</a>
+          </div>
+        </div>
+  </agm-info-window> -->
+
   </agm-map> 
   
   <button mat-raised-button (click)="teste()">Teste</button>
