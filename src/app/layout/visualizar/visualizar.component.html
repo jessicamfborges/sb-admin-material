@@ -14,17 +14,14 @@
     
   > 
   </agm-marker>
- 
-  <!-- <agm-polyline [strokeColor]="point.speed < 50 ? '#2196f3': 'red'" [paths]="this.polyline">
-    <agm-polyline-point [latitude]="point.coordenadas" [longitude]="point.coordenadas"> </agm-polyline-point>
-    <agm-polyline-point [latitude]="polyline[i+1].localizacao.lat" [longitude]="polyline[i+1].localizacao.lng"> </agm-polyline-point>
- 
-  </agm-polyline> -->
-  <agm-polyline *ngFor ="let point of this.coordenadas" [strokeColor]="'red'" [strokeWeight]="'1'">
-    <agm-polyline-point [latitude]="point.lat" [longitude]="point.lng"></agm-polyline-point>
-  <!-- <agm-polyline-point [latitude]="polyline[i+1].coordenadas" [longitude]="polyline[i+1].coordenadas"></agm-polyline-point> -->
+
+  <agm-polyline  [strokeColor]="'red'" [editable]="true" [strokeWeight]="'3'" [draggable]="true" 
+  [visible]="true" [clickable]="true">
+    <agm-polyline-point *ngFor="let point of this.polyline" [latitude]="point.lat" [longitude]="point.lng">
+    </agm-polyline-point> 
   </agm-polyline>
  
-  <agm-polygon [strokeColor]="'#083478'" [strokeWeight]="4" [paths]="this.polygonos"></agm-polygon>
-  </agm-map>
-<button mat-raised-button (click)="teste()">Teste</button>
+  <agm-polygon [strokeColor]="'#083478'" [strokeWeight]="2" [paths]="this.polygonos"></agm-polygon>  
+  </agm-map> 
+  
+  <button mat-raised-button (click)="teste()">Teste</button>

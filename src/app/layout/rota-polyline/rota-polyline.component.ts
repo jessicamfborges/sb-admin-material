@@ -13,7 +13,7 @@
 // export class AppComponent  {
 //   // google maps zoom level
 //   zoom: number = 15;
-  
+ 
 //   // initial center position for the map
 //   lat: number = 51.512803;
 //   lng: number = -0.091355;

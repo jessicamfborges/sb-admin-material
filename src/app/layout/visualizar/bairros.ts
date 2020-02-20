@@ -1,9 +1,9 @@
-export class Bairros {
+export class Bairros{
 
-   public static bairros = [
-        { "lat": -22.8818223, "lng": -43.3531079 },
-        { "lat": -22.8906786, "lng": -43.3793292 },
-        { "lat": -22.9004035, "lng": -43.3741103 },
-
+    public static bairros = [
+        
+        {"lat": -22.8852987, "lng":-43.3162433},
+        {"lat": -22.8175928, "lng":-43.3016801},
+        {"lat": -22.7912706, "lng":-43.4072273},
     ]
 }
