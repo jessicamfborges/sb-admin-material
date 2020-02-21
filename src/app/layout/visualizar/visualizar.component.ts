@@ -15,38 +15,16 @@ export class VisualizarComponent implements OnInit {
 
   constructor(private serviceDados: visualizarservice) { }
   public infoWindow: InfoWindow = undefined
-
-
-
-// infoWindowOpened = null
-// previous_info_window = null
-
-// close_window(){
-// if (this.previous_info_window != null ) {
-//   this.previous_info_window.close()
-//   }    
-// }
-
-// select_marker(data,infoWindow){
-//  if (this.previous_info_window == null)
-//   this.previous_info_window = infoWindow;
-//  else{
-//   this.infoWindowOpened = infoWindow
-//   this.previous_info_window.close()
-//  }
-//  this.previous_info_window = infoWindow
-// }
-//info
   
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
   @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;
  
-  // polyline = Coordenadas.coordenadas
+  //polyline = Coordenadas.coordenadas
   polygonos = Bairros.bairros
 
   polyline = [        
-    {"lat":-23.0213180, "lng":-43.4499750},
-    {"lat":-23.0304021, "lng":-43.4840498},]
+    {"lat":-23.0085425, "lng":-43.3289251},
+    {"lat":-22.9288194, "lng":-43.3811098},]
 
 
   lat = -22.9311594;

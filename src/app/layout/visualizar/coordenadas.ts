@@ -2,8 +2,8 @@ export class Coordenadas{
 
     public static coordenadas = [
 
-        {"lat":-23.0213180, "lng":-43.4499750},
-        {"lat":-23.0304021, "lng":-43.4840498},
+        {"lat":-23.0085425, "lng":-43.3289251},
+        {"lat":-22.9288194, "lng":-43.3811098},
     ]
 }
 
