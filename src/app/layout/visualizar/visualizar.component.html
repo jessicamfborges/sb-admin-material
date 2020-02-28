@@ -1,32 +1,40 @@
 <agm-map #mapa [latitude]="lat" [longitude]="long" [zoom]="11" >
-  <agm-marker
+    <agm-marker
 
+      
+      #agmMarker
+      *ngFor="let localizacao of this.serviceDados.getTopnav()"
+      [latitude]="localizacao.lat"
+      [longitude]="localizacao.long"
+      [opacity]="1"
+      [markerDraggable]="false"
+      (markerClick)="clickedMarker(localizacao,infowindow)"
+      [iconUrl]= "localizacao.icone"
     
-    #agmMarker
-    *ngFor="let localizacao of this.serviceDados.getTopnav()"
-    [latitude]="localizacao.lat"
-    [longitude]="localizacao.long"
-    [opacity]="1"
-    [markerDraggable]="false"
-    (markerClick)="click(localizacao)"
-    [iconUrl]= "localizacao.icone"
-
-    
-  > 
+    > 
   
-  </agm-marker>
+    <agm-info-window #infowindow>
+      <div id="infowindowdados"> </div>
+    </agm-info-window>
+    
+    <div (mouseover)="changeText=true">
+      <span [hidden]="changeText">Cadastrar</span>
+      <span [hidden]="!changeText">Visualizar</span>
+    </div>
 
-  <agm-polyline  [strokeColor]="'red'" [editable]="true" [strokeWeight]="'3'" [draggable]="true" 
-  [visible]="true" [clickable]="true">
-    <agm-polyline-point *ngFor="let point of this.polyline" [latitude]="point.lat" [longitude]="point.lng">
-    </agm-polyline-point> 
-  </agm-polyline>
- 
-  <agm-polygon [strokeColor]="'#083478'" [strokeWeight]="2" [paths]="this.polygonos"></agm-polygon>  
+    </agm-marker>
 
-  <agm-info-window [disableAutoPan]="true">
+      <agm-polyline  [strokeColor]="'red'" [editable]="true" [strokeWeight]="'3'" [draggable]="true" 
+      [visible]="true" [clickable]="true">
+        <agm-polyline-point *ngFor="let point of this.polyline" [latitude]="point.lat" [longitude]="point.lng">
+        </agm-polyline-point> 
+      </agm-polyline>
+    
+    <agm-polygon [strokeColor]="'#083478'" [strokeWeight]="2" [paths]="this.polygonos"></agm-polygon>  
+
+  <!-- <agm-info-window [disableAutoPan]="true">
     Hi, this is the content of the <strong>info window</strong>
-  </agm-info-window>
+  </agm-info-window> -->
   
 </agm-map> 
 

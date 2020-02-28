@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, Injectable} from '@angular/core';
 import { visualizarservice } from './visualizar.service';
 import { AgmMarker } from '@agm/core';
 import { InfoWindow } from '@agm/core/services/google-maps-types'
@@ -10,44 +10,59 @@ import { from } from 'rxjs';
   selector: 'app-visualizar',
   templateUrl: './visualizar.component.html',
   styleUrls: ['./visualizar.component.scss']
+
+  
 })
-export class VisualizarComponent implements OnInit {
+
+export class  VisualizarComponent implements OnInit{
 
   constructor(private serviceDados: visualizarservice) { }
-  public infoWindow: InfoWindow = undefined
+ //public infoWindow: InfoWindow = undefined
+
+  changeText:boolean=true;
   
   @ViewChild('agmMarker', {read: ViewContainerRef}) agmMarker: AgmMarker;
   @ViewChild('mapa', {read: ViewContainerRef}) mapa: any;
  
-  //polyline = Coordenadas.coordenadas
   polygonos = Bairros.bairros
 
   polyline = [        
     {"lat":-23.0085425, "lng":-43.3289251},
-    {"lat":-22.9288194, "lng":-43.3811098},]
+    {"lat":-22.9288194, "lng":-43.3811098},
+  ]
 
 
-  lat = -22.9311594;
-  long = -43.3584189;
+   lat = -22.9311594;
+   long = -43.3584189;
+  previous
 
-  localizacoesMap:any = [];
-  data: string;
-  minhasLocalizacoes:any = [];
 
-  markers: any[] = [];
+    localizacoesMap:any = [];
+    data: string;
+    minhasLocalizacoes:any = [];
 
-  selectedLat: Number = 0;
-  selectedLng: Number = 0;
-  
-  clickedMarker(lat: number, lng: number) {
-  this.selectedLat = lat;
-  this.selectedLng = lng;
+    markers: any[] = [];
+
+    selectedLat: Number = 0;
+    selectedLng: Number = 0;
+    
+    clickedMarker(localizacao,infowindow) {
+    // this.selectedLat = lat;
+    // this.selectedLng = lng;
+
+      if(this.previous){
+      this.previous.close();
+    }
+    this.previous = infowindow
   }
+  
   
   ngOnInit(): void {
-    //console.log(this.polyline);
+    console.log(this.polyline);
     this.localizacoesMap = new Map();  
   }
+
+
 
   teste(){
     console.log(this.serviceDados.getTopnav())
